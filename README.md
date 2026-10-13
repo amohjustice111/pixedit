@@ -1,34 +1,24 @@
-# PixEdit — Creative Studio
+# PixEdit — Photopea Embedded Edition
 
-PixEdit is a Photopea-inspired educational photo editor starter project. It is a static website and Progressive Web App (PWA), suitable for free Vercel hosting.
-
-## Current working features
-- Responsive desktop and mobile layout
-- Open local images and drag-and-drop images into the workspace
-- Create a blank canvas
-- Brush, eraser, text, crop-selection workflow, and eyedropper
-- Undo and redo
-- Brightness, contrast, saturation, blur, and quick filters
-- Export PNG, JPG, or WEBP
-- Installable PWA manifest and service worker
-- Simple layers panel UI
-
-## Important scope note
-This is a starter, not a complete Photopea replacement yet. The current layers panel is a UI placeholder; full multi-layer compositing, PSD import/export, advanced selection, masks, vector editing, and professional-grade non-destructive workflows are not implemented. The crop tool asks for two points in sequence. Adjustments and filters are destructive, so use undo or keep an original copy.
-
-## Run locally
-Open `index.html` in a browser for basic testing. For install/offline behavior, serve the folder over localhost (for example with VS Code Live Server) or deploy it over HTTPS.
+This project provides a branded, responsive PixEdit shell with the full Photopea editor embedded in an iframe.
 
 ## Deploy to Vercel
-1. Upload these files to a GitHub repository.
-2. In Vercel, choose **Add New → Project** and import the repository.
-3. No build command is needed; leave the framework preset as **Other** and deploy.
-4. Open the deployed HTTPS URL in Chrome or Edge. Use the install icon or browser menu → **Install PixEdit** / **Install app**.
-5. To make changes, edit files in GitHub and commit. Vercel redeploys automatically.
+1. Replace the files in the root of your GitHub `pixedit` repository with the files in this ZIP.
+2. Commit the changes.
+3. Wait for Vercel to deploy and show **Ready**.
+4. Open the actual deployment URL from your Vercel project.
 
-## Next development upgrades
-1. Real multi-layer system with visibility, reorder, opacity, and blend modes.
-2. Transform, lasso/marquee selection, fill, gradient, shapes, and masks.
-3. Non-destructive adjustment layers and keyboard shortcut customization.
-4. PSD import/export via a suitable library, with format limitations documented.
-5. Local project save/open format.
+## Important limitations
+- The editing interface and editing features come from Photopea, not from PixEdit source code.
+- Photopea's editor, tools, file formats, and menus are hosted by Photopea. Photopea branding/ads may remain visible.
+- Basic embedding is free, but hiding Photopea branding requires the appropriate paid arrangement.
+- PixEdit cannot directly inspect or change Photopea's internal interface because the iframe is cross-origin.
+- Installing PixEdit as a PWA installs the branded shell; an internet connection is required to load Photopea.
+- Use Photopea's own File > Save/Export options to save projects and exports.
+
+## Files
+- `index.html` — PixEdit shell and Photopea iframe
+- `manifest.json` — installable app metadata
+- `sw.js` — app-shell caching and cache versioning
+- `icons/icon.svg` — PixEdit icon
+- `vercel.json` — basic Vercel static deployment configuration
