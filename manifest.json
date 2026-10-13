@@ -1,0 +1,13 @@
+{
+  "name": "PixEdit Creative Studio",
+  "short_name": "PixEdit",
+  "description": "A modern browser-based image editor.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#11131a",
+  "theme_color": "#11131a",
+  "icons": [
+    {"src": "/icons/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable"}
+  ]
+}
